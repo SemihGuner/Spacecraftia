@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4237045759701991405}
   - component: {fileID: 964572131227840584}
   - component: {fileID: 3064187688329626754}
-  - component: {fileID: 8541830958518339076}
+  - component: {fileID: 1339773672}
+  - component: {fileID: 1339773671}
   m_Layer: 0
   m_Name: Spaceship #1
   m_TagString: Untagged
@@ -84,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8541830958518339076
-MeshCollider:
+--- !u!65 &1339773672
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +95,22 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 9000081312944733210, guid: c5e12de1cf6ea5549bcffefa8f7e4f27, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 34.47469, y: 4.8581448, z: 25.848888}
+  m_Center: {x: 0, y: 2.4290724, z: 1.7589197}
+--- !u!54 &1339773671
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3568770686382826839}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
