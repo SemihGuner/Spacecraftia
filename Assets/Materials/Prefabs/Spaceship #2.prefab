@@ -128,4 +128,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 2
-  laserType: {fileID: 0}
+  laserType: {fileID: 4021132689355708707, guid: b9610fc3e54014b4daf85356113f72c3, type: 3}

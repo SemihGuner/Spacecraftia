@@ -4,5 +4,5 @@ using UnityEngine;
 public class Spaceships : MonoBehaviour
 {
     [SerializeField] private int ID;
-    [SerializeField] private GameObject laserType;
+    [SerializeField] public GameObject laserType;
 }

@@ -6,17 +6,32 @@ public class Asteroid : MonoBehaviour
 {
     public float speed;
     private Rigidbody astRigid;
+    private GameManager gameManager;
 
     private void Start()
     {
         astRigid = GetComponent<Rigidbody>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+    private void Update()
+    {
         AstMove();
     }
     private void AstMove()
     {
-        for (int i = 0; i < 3; i++)
-        { 
-            astRigid.AddForce(Vector3.forward * speed, ForceMode.Impulse);
+        astRigid.AddForce(Vector3.back * speed, ForceMode.Impulse);
+        if (transform.position.z < -200)
+        {
+            Destroy(gameObject);
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Spaceship"))
+        {
+            gameManager.GameOver();
+        }
+        Destroy(gameObject);
+        Destroy(collision.gameObject);
     }
 }
