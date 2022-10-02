@@ -31,6 +31,10 @@ public class Asteroid : MonoBehaviour
         {
             gameManager.GameOver();
         }
+        else
+        {
+            gameManager.UpdateScore(1);
+        }
         Destroy(gameObject);
         Destroy(collision.gameObject);
     }

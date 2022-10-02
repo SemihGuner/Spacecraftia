@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class GameManager : MonoBehaviour
     public List<GameObject> asteroids = new List<GameObject>();
     private Vector3 startPos = new Vector3(0, 0, -90);
     private AudioSource AudioSource;
+    private int score = 0;
     public AudioClip ShootingClip;
     public AudioClip GameOverClip;
+    private TextMeshProUGUI scoreText;
     void Start()
     {
         //These are for positioning the selected ship.
         spaceship = GameObject.FindWithTag("Spaceship");
         AudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
         spaceship.transform.position = startPos;
         spaceship.transform.Rotate(0, -180, 0);
         spaceship.AddComponent<PlayerController>();
@@ -45,5 +49,10 @@ public class GameManager : MonoBehaviour
         AudioSource.PlayOneShot(GameOverClip, 1.0f);
         CancelInvoke();
         SceneManager.LoadScene(0);
+    }
+    public void UpdateScore(int increase)
+    {
+        score += increase;
+        scoreText.text = "Score: " + score;
     }
 }
