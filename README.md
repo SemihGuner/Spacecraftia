@@ -1,2 +1,4 @@
 # Spacecraftia
- Spacecraftia - Attempt 2.
+Developed By Semih Güner.
+Assets from Unity Asset Store
+October 2022
