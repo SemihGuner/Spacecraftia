@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private AudioSource AudioSource;
     private int score = 0;
     public AudioClip ShootingClip;
+    public AudioClip BoomClip;
     public AudioClip GameOverClip;
     private TextMeshProUGUI scoreText;
     public bool gameOverCheck = false;
@@ -66,5 +67,9 @@ public class GameManager : MonoBehaviour
     {
         score += increase;
         scoreText.text = "Score: " + score;
+    }
+    public void ExplosionSound()
+    {
+        AudioSource.PlayOneShot(BoomClip, 1.0f);
     }
 }

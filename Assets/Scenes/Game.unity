@@ -775,7 +775,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 4ef4f4a6769fe3246990298e4658134a, type: 2}
   GOS: {fileID: 1488006519}
   ShootingClip: {fileID: 8300000, guid: 0d78e7c35850fac42b51e949ef32c1c4, type: 3}
+  BoomClip: {fileID: 8300000, guid: 8928465cf6843bd45b0a2dd942a2a59c, type: 3}
   GameOverClip: {fileID: 8300000, guid: ca58ef1c99fd51540b0e233ee61a3201, type: 3}
+  gameOverCheck: 0
 --- !u!4 &908317518
 Transform:
   m_ObjectHideFlags: 0
