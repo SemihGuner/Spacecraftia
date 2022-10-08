@@ -8,8 +8,10 @@ public class MusicHandler : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip firstOST;
     public AudioClip otherOST;
-    private bool firstOstPlaying = true;
-    private bool otherOstPlaying = false;
+    private GameManager gameManager;
+    // DON'T remove these two bools. Or update function turns the music into a dust.
+    private bool firstOSTPlaying = false;
+    private bool otherOSTPlaying = false;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -17,21 +19,29 @@ public class MusicHandler : MonoBehaviour
     }
     private void Update()
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2) && !otherOstPlaying)
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
         {
-            audioSource.Stop();
-            audioSource.clip = otherOST;
-            audioSource.Play();
-            otherOstPlaying = true;
-            firstOstPlaying = false;
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            if (!gameManager.gameOverCheck && !otherOSTPlaying)
+            {
+                audioSource.Stop();
+                audioSource.clip = otherOST;
+                firstOSTPlaying = false;
+                otherOSTPlaying = true;
+                audioSource.Play();
+            }
+            else if(gameManager.gameOverCheck)
+            {
+                audioSource.Stop();
+            }
         }
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0) && !firstOstPlaying)
+        else if (!firstOSTPlaying) 
         {
             audioSource.Stop();
             audioSource.clip = firstOST;
-            audioSource.Play();
-            firstOstPlaying = true;
-            otherOstPlaying = false;
+            firstOSTPlaying = true;
+            otherOSTPlaying = false;
+            audioSource.Play(); 
         }
     }
 }

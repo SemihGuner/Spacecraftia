@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc33332dea1534749976548cf93f2142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedShip: {fileID: 0}
 --- !u!1 &878979806
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +609,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1026043486, guid: b4b3ea93ca002c64cb198d673ab3ef47, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3970380494363882774, guid: b4b3ea93ca002c64cb198d673ab3ef47, type: 3}
       propertyPath: m_Name
       value: Spaceship #2
@@ -1038,6 +1043,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1339773672, guid: 38eb5df97b5f781499522faf896ed855, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3568770686382826839, guid: 38eb5df97b5f781499522faf896ed855, type: 3}
       propertyPath: m_Name
       value: Spaceship #1
@@ -1095,6 +1104,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1396192055, guid: 3c74431e6d08b7243827e4b9d320fa7e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1378652158212206632, guid: 3c74431e6d08b7243827e4b9d320fa7e, type: 3}
       propertyPath: m_Name
       value: Spaceship #3
